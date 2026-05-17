@@ -1,0 +1,225 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 20px rgba(160, 107, 167, 0.25);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 200, 255, 0.55),
+    transparent 70%
+  );
+  filter: blur(14px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.header-ribbon {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 200, 255, 0.4),
+    rgba(200, 160, 255, 0.4),
+    rgba(255, 220, 240, 0.4)
+  );
+  background-size: 300% 300%;
+  animation: ribbonFlow 12s ease-in-out infinite;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes ribbonFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header-fireflies {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.header-inner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.header-logo {
+  width: 52px;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+.header-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink-dark);
+  text-shadow: var(--glow-soft);
+}
+
+.header-title-storybook {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--ink-dark);
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.7),
+    0 0 12px rgba(255, 200, 255, 0.4);
+}
+
+.header-menu-toggle {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink-dark);
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-menu-toggle {
+    display: block;
+  }
+
+  .header-nav {
+    position: absolute;
+    top: 70px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(160, 107, 167, 0.25);
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header-nav-open {
+    display: flex;
+  }
+}
+
+.header-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-item,
+.nav-heart,
+.header-theme-toggle {
+  font-size: 22px;
+  margin-left: 16px;
+  padding: 6px 10px;
+  border-radius: 50%;
+  border: 2px solid var(--fairy-pink);
+  color: var(--fairy-pink);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(180, 140, 255, 0.25);
+  text-decoration: none;
+}
+
+.nav-item-icon,
+.nav-heart-icon,
+.nav-dark-icon {
+  font-size: 24px;
+  color: var(--fairy-pink);
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid var(--fairy-pink);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 3px 10px rgba(180, 140, 255, 0.25);
+  transition: 0.25s ease;
+}
+
+.nav-item:hover,
+.nav-heart:hover,
+.header-theme-toggle:hover {
+  transform: translateY(-2px) scale(1.1);
+  background: var(--fairy-pink);
+  color: white;
+  box-shadow: 0 6px 18px rgba(255, 150, 200, 0.35);
+}
+
+.nav-item:hover .nav-item-icon,
+.nav-heart:hover .nav-heart-icon,
+.header-theme-toggle:hover .nav-dark-icon {
+  background: var(--fairy-pink);
+  color: white;
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 6px 18px rgba(255, 150, 200, 0.35);
+}
+
+/* Heart counter */
+.nav-heart {
+  position: relative;
+}
+
+.nav-heart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--fairy-pink);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(255, 150, 200, 0.4);
+}
+
+/* Dark mode */
+:root.dark .header {
+  background: linear-gradient(135deg, #2a2333, #1f1a24);
+}
+
+:root.dark .header-title,
+:root.dark .nav-item-icon,
+:root.dark .nav-heart-icon,
+:root.dark .nav-dark-icon {
+  color: var(--ink-dark);
+}

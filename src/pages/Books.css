@@ -1,0 +1,305 @@
+.books-page,
+.enchanted-page {
+  padding: 80px 24px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.enchanted-page {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--fairy-pink),
+    var(--fairy-mist),
+    var(--fairy-sky)
+  );
+  overflow: hidden;
+}
+
+.enchanted-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 3px, transparent 3px),
+    radial-gradient(circle, rgba(255, 200, 255, 0.8) 2px, transparent 2px),
+    radial-gradient(circle, rgba(230, 160, 240, 0.7) 1.5px, transparent 2px);
+  background-size:
+    140px 140px,
+    110px 110px,
+    90px 90px;
+  opacity: 0.8;
+  filter: blur(0.5px);
+  animation: fairyDustFloat 35s linear infinite;
+  pointer-events: none;
+}
+
+.enchanted-page > * {
+  position: relative;
+  z-index: 2;
+}
+
+.books-page-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ink-dark);
+  text-shadow: var(--glow-soft);
+  animation: shimmerGlow 6s ease-in-out infinite;
+}
+
+.books-page-subtitle {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+}
+
+.books-page-controls {
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.books-page-controls::after {
+  content: "▼";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.9rem;
+  color: rgba(120, 80, 150, 0.8);
+}
+
+.books-page-select {
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 255, 0.65),
+    rgba(230, 210, 255, 0.65),
+    rgba(255, 240, 255, 0.65)
+  );
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(220, 180, 255, 0.6);
+  color: var(--ink-dark);
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.books-page-select:hover,
+.books-page-select:focus {
+  border-color: rgba(247, 187, 234, 0.9);
+  box-shadow:
+    0 0 18px rgba(220, 160, 255, 0.8),
+    0 0 28px rgba(255, 200, 255, 0.6),
+    inset 0 0 14px rgba(255, 240, 255, 0.8);
+  transform: translateY(-3px);
+}
+
+.books-page-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  padding: 0 24px;
+}
+
+@media (max-width: 900px) {
+  .books-page-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .books-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.books-page-card {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 255, 0.65),
+    rgba(230, 210, 255, 0.65),
+    rgba(255, 240, 255, 0.65)
+  );
+  padding: 18px;
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(220, 180, 255, 0.6);
+  transition: 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.books-page-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(247, 187, 234, 0.9);
+  box-shadow:
+    0 0 18px rgba(220, 160, 255, 0.8),
+    0 0 28px rgba(255, 200, 255, 0.6),
+    inset 0 0 14px rgba(255, 240, 255, 0.8);
+}
+
+.books-page-cover {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background: #f7d6f5;
+  border-radius: 12px;
+  border: 2px solid rgba(220, 180, 255, 0.6);
+  box-shadow:
+    inset 0 0 14px rgba(255, 240, 255, 0.8),
+    0 0 12px rgba(220, 160, 255, 0.4);
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.books-page-title-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink-dark);
+  text-align: center;
+  margin-top: 12px;
+  white-space: normal;
+  min-height: 48px;
+  line-height: 1.2;
+  overflow: hidden;
+}
+
+.books-page-author {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.books-page-heart-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border: 2px solid var(--fairy-pink);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--fairy-pink);
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(180, 140, 255, 0.25);
+  transition: 0.25s ease;
+}
+
+.books-page-heart-btn:hover {
+  transform: scale(1.15) translateY(-2px);
+  box-shadow: 0 6px 18px rgba(180, 140, 255, 0.35);
+}
+
+.books-page-heart-btn.active {
+  background: var(--fairy-pink);
+  color: white;
+  border-color: var(--fairy-pink);
+  box-shadow: 0 6px 18px rgba(255, 150, 200, 0.4);
+}
+
+.scroll-up-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 14px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, var(--fairy-lavender), var(--fairy-pink));
+  color: var(--ink-dark);
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(160, 107, 167, 0.25);
+  transition: 0.2s ease;
+  z-index: 999;
+}
+
+.scroll-up-btn:hover {
+  transform: translateY(-4px);
+}
+
+.scroll-up-btn:active {
+  transform: scale(0.95);
+}
+
+.books-page-pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.1rem;
+  color: var(--ink-dark);
+}
+
+.books-page-pagination button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 2px solid rgba(220, 180, 255, 0.6);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 255, 0.65),
+    rgba(230, 210, 255, 0.65),
+    rgba(255, 240, 255, 0.65)
+  );
+  color: var(--ink-dark);
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow:
+    0 3px 10px rgba(180, 140, 255, 0.25),
+    inset 0 0 10px rgba(255, 240, 255, 0.8);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.books-page-pagination button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  border-color: rgba(247, 187, 234, 0.9);
+  box-shadow:
+    0 6px 18px rgba(220, 160, 255, 0.35),
+    inset 0 0 14px rgba(255, 240, 255, 0.9);
+}
+
+.books-page-pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+}
+
+.books-page-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink-dark);
+  text-align: center;
+  margin-top: 12px;
+
+  white-space: normal;
+
+  min-height: 48px;
+  max-height: 48px;
+  line-height: 1.2;
+
+  overflow: hidden;
+}
+
+.books-page-card-wrapper {
+  position: relative;
+}

@@ -1,0 +1,146 @@
+.authors-page {
+  padding: 80px 24px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.authors-page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--ink-dark);
+  text-shadow: var(--glow-soft);
+  animation: shimmerGlow 6s ease-in-out infinite;
+}
+
+.authors-page-subtitle {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+}
+
+.authors-page-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  padding: 0 24px;
+}
+
+@media (max-width: 900px) {
+  .authors-page-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .authors-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.authors-page-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 255, 0.65),
+    rgba(230, 210, 255, 0.65),
+    rgba(255, 240, 255, 0.65)
+  );
+  padding: 18px;
+  border-radius: 14px;
+  border: 2px solid rgba(220, 180, 255, 0.6);
+  backdrop-filter: blur(8px);
+  transition: 0.25s ease;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.authors-page-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(247, 187, 234, 0.9);
+  box-shadow:
+    0 0 18px rgba(220, 160, 255, 0.8),
+    0 0 28px rgba(255, 200, 255, 0.6),
+    inset 0 0 14px rgba(255, 240, 255, 0.8);
+}
+
+.authors-page-photo {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f7d6f5;
+  border: 2px solid rgba(220, 180, 255, 0.6);
+  box-shadow:
+    inset 0 0 14px rgba(255, 240, 255, 0.8),
+    0 0 12px rgba(220, 160, 255, 0.4);
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.authors-page-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink-dark);
+  margin-bottom: 8px;
+}
+
+.authors-page-bio {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.authors-page-pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.1rem;
+  color: var(--ink-dark);
+}
+
+.authors-page-pagination button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 2px solid rgba(220, 180, 255, 0.6);
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 255, 0.65),
+    rgba(230, 210, 255, 0.65),
+    rgba(255, 240, 255, 0.65)
+  );
+
+  color: var(--ink-dark);
+  font-weight: 600;
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 3px 10px rgba(180, 140, 255, 0.25),
+    inset 0 0 10px rgba(255, 240, 255, 0.8);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.authors-page-pagination button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  border-color: rgba(247, 187, 234, 0.9);
+  box-shadow:
+    0 6px 18px rgba(220, 160, 255, 0.35),
+    inset 0 0 14px rgba(255, 240, 255, 0.9);
+}
+
+.authors-page-pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+}

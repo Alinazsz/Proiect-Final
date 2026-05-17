@@ -1,0 +1,55 @@
+/* ============================================
+   🌈 FAIRY REALM GLOBAL THEME
+   ============================================ */
+
+:root {
+  --fairy-pink: #f8d7e8;
+  --fairy-lavender: #d8c7ff;
+  --fairy-gold: #f2d28b;
+  --fairy-cream: #fff8f1;
+  --fairy-mist: #e8e0ff;
+  --fairy-sky: #dff3ff;
+
+  --ink-dark: #3a2e4f;
+  --ink-soft: #5a4b72;
+
+  --glow-strong: 0 0 18px rgba(255, 255, 255, 0.9);
+  --glow-soft: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--fairy-cream);
+  color: var(--ink-dark);
+  overflow-x: hidden;
+}
+
+/* ============================================
+   🌙 DARK MODE THEME
+   ============================================ */
+
+:root.dark {
+  --fairy-pink: #4a2c3d;
+  --fairy-lavender: #3d2f5a;
+  --fairy-gold: #8a6f3a;
+  --fairy-cream: #1f1a24;
+  --fairy-mist: #2a2333;
+  --fairy-sky: #2b3a4a;
+
+  --ink-dark: #f5e9ff;
+  --ink-soft: #d2c4e6;
+
+  --glow-strong: 0 0 18px rgba(255, 255, 255, 0.4);
+  --glow-soft: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+body.dark {
+  background: var(--fairy-cream);
+  color: var(--ink-dark);
+}
