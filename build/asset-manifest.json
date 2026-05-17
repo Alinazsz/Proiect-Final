@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0af2092b.css",
+    "main.js": "/static/js/main.3c778015.js",
+    "static/media/default-author.png": "/static/media/default-author.54bf0e9e81b8e39897d3.png",
+    "static/media/FairyLogoFull.svg": "/static/media/FairyLogoFull.7319ce09e9e1bc7eedc8a50feae92217.svg",
+    "index.html": "/index.html",
+    "main.0af2092b.css.map": "/static/css/main.0af2092b.css.map",
+    "main.3c778015.js.map": "/static/js/main.3c778015.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0af2092b.css",
+    "static/js/main.3c778015.js"
+  ]
+}
