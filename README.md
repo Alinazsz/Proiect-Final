@@ -5,6 +5,14 @@ The project includes routing, reusable components, custom hooks, state managemen
 
 ---
 
+## Live Demo
+
+The project is deployed on Netlify and available here:
+
+🔗 **https://enchanted-library.netlify.app/**
+
+---
+
 ## Features
 
 - Search functionality  
@@ -21,7 +29,8 @@ The project includes routing, reusable components, custom hooks, state managemen
 - React  
 - React Router  
 - JavaScript (ES6+)  
-- CSS  
+- CSS
+- Netlify (Hosting)  
 
 ---
 
